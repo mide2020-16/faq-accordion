@@ -1,0 +1,142 @@
+/* Global Reset Styles */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Theme Colors */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+}
+
+/* Body Style */
+body {
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--light-pink);
+  line-height: 1.6;
+  color: var(--dark-purple);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Background Image Styling */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 40vh;
+  background: url('./assets/images/background-pattern-desktop.svg') no-repeat center;
+  background-size: cover;
+  z-index: -1;
+}
+
+/* Main Section */
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+/* Container Styling */
+.container {
+  width: 80%;
+  max-width: 600px;
+  background-color: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Header Section (FAQs Title) */
+.faqs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.faqs h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--dark-purple);
+  margin-left: 1rem;
+}
+
+.faqs img {
+  width: 50px;
+}
+
+/* Accordion Styles */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Accordion Item */
+.accordion-item {
+  background-color: var(--white);
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  border-bottom: 2px solid var(--light-pink);
+  transition: background-color 0.3s ease;
+}
+
+.accordion-item-header {
+    width: 100%;
+    height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-item-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.accordion-item-header button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Accordion Content */
+.accordion-item-content {
+  margin-top: 1rem;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--grayish-purple);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.open .accordion-item-content {
+    height: auto;
+    padding: 1rem 2rem;
+}
+
+/* Attribution Footer */
+footer.attribution {
+    padding: 2em;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
